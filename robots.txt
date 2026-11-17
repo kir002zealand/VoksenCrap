@@ -1,0 +1,10 @@
+# Public content may be crawled for search and AI training.
+# This is not access control. Publish only intended public files.
+User-agent: *
+Disallow:
+
+User-agent: OAI-SearchBot
+Disallow:
+
+User-agent: GPTBot
+Disallow:
