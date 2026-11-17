@@ -7,6 +7,7 @@
   <meta name="description" content="Sæt din opvasker op til at bruge den første gang med VOKSEN CRAP!'s guide i 10 trin.">
   <title>HOW TO OPVASKER! — VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/navigation.js" defer></script>
 </head>
 <body class="hack-page">
   <a class="skip-link" href="#indhold">Gå til indhold</a>
@@ -19,28 +20,33 @@
         <h1><span>HOW TO</span><span>OPVASKER!</span></h1>
         <p>Sæt din opvasker op til at bruge den første gang</p>
       </div>
-      <figure class="video-placeholder" aria-label="Videoplads — video er endnu ikke tilføjet">
-        <span class="video-placeholder__play" aria-hidden="true"></span>
-        <figcaption>Indsæt video her</figcaption>
+      <figure class="video-placeholder" aria-label="Video til opvaskerguiden">
+        <video controls playsinline preload="metadata" aria-label="Lil peanut 1.1 — video til opvaskerguiden">
+          <source src="video/Lil%20peanut%201.1.mp4" type="video/mp4">
+          Din browser understøtter ikke video. <a href="video/Lil%20peanut%201.1.mp4">Åbn videoen Lil peanut 1.1</a>.
+        </video>
       </figure>
       <section class="guide" aria-labelledby="guide-title">
         <h2 id="guide-title">SÅDAN GØR DU</h2>
         <ol class="guide-steps" role="list">
-          <li><span class="guide-steps__number" aria-hidden="true">01</span><span>Skru proppen af i bunden af din opvasker</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">02</span><span>Påfør salt ned i hullet</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">03</span><span>Sæt proppen på igen</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">04</span><span>I lågen på din opvasker er der en lille låge</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">05</span><span>Tag din afspænding og påfør i hullet op til pilen</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">06</span><span>Luk lågen igen</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">07</span><span>Åben nu lågen ved siden af</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">08</span><span>Indsæt her din opvaskertabs</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">09</span><span>Luk lågen igen</span></li>
-          <li><span class="guide-steps__number" aria-hidden="true">10</span><span>Din opvasker er nu klar til at køre første gang</span></li>
+          <li><span class="guide-steps__number">01</span><span>Skru proppen af i bunden af din opvasker</span></li>
+          <li><span class="guide-steps__number">02</span><span>Påfør salt ned i hullet</span></li>
+          <li><span class="guide-steps__number">03</span><span>Sæt proppen på igen</span></li>
+          <li><span class="guide-steps__number">04</span><span>I lågen på din opvasker er der en lille låge</span></li>
+          <li><span class="guide-steps__number">05</span><span>Tag din afspænding og påfør i hullet op til pilen</span></li>
+          <li><span class="guide-steps__number">06</span><span>Luk lågen igen</span></li>
+          <li><span class="guide-steps__number">07</span><span>Åben nu lågen ved siden af</span></li>
+          <li><span class="guide-steps__number">08</span><span>Indsæt her din opvaskertabs</span></li>
+          <li><span class="guide-steps__number">09</span><span>Luk lågen igen</span></li>
+          <li><span class="guide-steps__number">10</span><span>Din opvasker er nu klar til at køre første gang</span></li>
         </ol>
       </section>
     </main>
   </div>
-  <nav class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
+  <button class="desktop-menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Åbn menu" hidden>
+    <span class="desktop-menu-toggle__lines" aria-hidden="true"></span>
+  </button>
+  <nav id="main-navigation" class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
     <a class="bottom-nav__item" href="index.html">
       <img src="assets/icon-home-inactive.png" width="20" height="21" alt="" aria-hidden="true">
       <span>HJEM</span>

@@ -7,6 +7,7 @@
   <meta name="description" content="Et hus fuldt af voksenproblemer. Find hjælp til hverdagens praktiske opgaver i VOKSEN CRAP!">
   <title>VOKSEN CRAP! — Hjem</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/navigation.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#indhold">Gå til indhold</a>
@@ -24,7 +25,10 @@
       </div>
     </main>
   </div>
-  <nav class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
+  <button class="desktop-menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Åbn menu" hidden>
+    <span class="desktop-menu-toggle__lines" aria-hidden="true"></span>
+  </button>
+  <nav id="main-navigation" class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
     <a class="bottom-nav__item bottom-nav__item--active" href="index.html" aria-current="page">
       <img src="assets/icon-home.svg" width="20" height="21" alt="" aria-hidden="true">
       <span>HJEM</span>

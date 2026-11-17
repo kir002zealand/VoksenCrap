@@ -8,6 +8,7 @@
   <title>Søg — VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/search.js" defer></script>
+  <script src="js/navigation.js" defer></script>
 </head>
 <body class="search-page">
   <a class="skip-link" href="#indhold">Gå til indhold</a>
@@ -68,7 +69,10 @@
       </section>
     </main>
   </div>
-  <nav class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
+  <button class="desktop-menu-toggle" type="button" aria-controls="main-navigation" aria-expanded="false" aria-label="Åbn menu" hidden>
+    <span class="desktop-menu-toggle__lines" aria-hidden="true"></span>
+  </button>
+  <nav id="main-navigation" class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
     <a class="bottom-nav__item" href="index.html">
       <img src="assets/icon-home-inactive.png" width="20" height="21" alt="" aria-hidden="true">
       <span>HJEM</span>

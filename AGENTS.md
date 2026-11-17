@@ -204,3 +204,14 @@ Afklaringer før relevante implementeringer: præcis fontfamilie og vægte; eksa
 
 ### Implementeret videokomponent
 `video.html` genbruger `.video-placeholder` fra opvaskerguiden med varianterne `--purple` og `--mint` i `.video-card`. Opvaskerguidens styles er bevaret. Afspilningssymboler er dekorative. Når konkrete filer leveres, erstattes figure-indhold med navngivet `video controls playsinline`, rigtige source-filer og eventuelle danske `track kind="captions"`-filer. Ingen autoplay. Wrapperens aspektforhold og fælles styles bevares.
+
+### Designændring 17. november 2026
+Efter brugerens bestilling er den blå vandrette topstreg fjernet fra alle seks sider. Dette har forrang frem for PDF-referencens topstreger og beskrivelserne ovenfor. Genindfør ikke topstregen. Blå navigation, ikoner, pile og fokusmarkeringer bevares.
+
+### Responsiv navigation, 17. november 2026
+Efter brugerens bestilling bevares bundnavigationen under 1024 px. Fra 1024 px bruges de samme fire links i en fold-ud-menu øverst til højre, åbnet med en hamburgerknap. `js/navigation.js` styrer `hidden`, `aria-expanded`, Escape, klik udenfor og skift mellem skærmstørrelser. Mobilmenuen ændres ikke. Desktop kræver ikke en ekstra kopi af navigationslinks. Uden JavaScript er desktoplinks synlige som fallback. Den tidligere bundafstand fjernes på desktop, hvor navigationen ikke længere ligger nederst.
+
+### Tilgængelighedsrettelser, 17. november 2026
+Små pink kategoritekster på GEMTE bruger nu `--color-accent-text: #C52C60`, som giver cirka 5,38:1 mod hvid. Store pink overskrifter og illustrationer bevarer deres oprindelige farver. Opvaskerguidens 01–10 må ikke skjules med `aria-hidden`; de synlige numre skal kunne læses af hjælpemidler. Listen beholder `ol` og `role="list"` for listestøtte med nulstillede CSS-markører. Logoet kan ombrydes ved tekstforstørrelse. Scroll-padding giver plads til den faste mobilnavigation, og genopbygning af favoritlisten bevarer fokus på samme hack eller flytter det til eksempeloverskriften, hvis hacket fjernes.
+
+Kode- og kontrastkontrol er ikke fuld WCAG-verifikation. Browserzoom, tekstafstande, fokus, skærmlæseroplæsning og videoernes behov for undertekster/synstolkning skal stadig testes manuelt. Ingen undertekster må opfindes uden gennemgang af de faktiske videoer.

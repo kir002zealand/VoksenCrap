@@ -19,6 +19,8 @@ for (const button of document.querySelectorAll('button[data-example-id]')) {
 
 function renderFavorites() {
   const ids = favorites.list();
+  const focusedCard = document.activeElement.closest('[data-saved-id]');
+  const focusedId = personalList.contains(focusedCard) ? focusedCard?.dataset.savedId : null;
   personalList.replaceChildren();
   personalSection.hidden = ids.length === 0;
   for (const id of ids) {
@@ -26,6 +28,7 @@ function renderFavorites() {
     const item = document.createElement('li');
     const card = document.createElement(hack.href ? 'a' : 'button');
     card.className = 'hack-card';
+    card.dataset.savedId = id;
     if (hack.href) card.href = hack.href;
     else {
       card.type = 'button';
@@ -40,6 +43,16 @@ function renderFavorites() {
     }
     item.append(card);
     personalList.append(item);
+  }
+  if (focusedId) {
+    const replacement = [...personalList.querySelectorAll('[data-saved-id]')]
+      .find((card) => card.dataset.savedId === focusedId);
+    if (replacement) replacement.focus();
+    else {
+      const heading = document.querySelector('#examples-title');
+      heading.setAttribute('tabindex', '-1');
+      heading.focus();
+    }
   }
   savedStatus.textContent = ids.length
     ? `${ids.length} personligt gemte hacks.`
