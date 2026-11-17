@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff6e9">
+  <meta name="description" content="Find hjælp til dit voksenproblem. Søg efter hacks til køkken, badeværelse, vaskerum, økonomi og værksted.">
+  <title>Søg — VOKSEN CRAP!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/search.js" defer></script>
+</head>
+<body class="search-page">
+  <a class="skip-link" href="#indhold">Gå til indhold</a>
+  <div class="page">
+    <main id="indhold" tabindex="-1">
+      <header class="search-intro">
+        <h1>SØG</h1>
+        <p>Find hjælp til dit voksenproblem.</p>
+      </header>
+      <form class="search-form" role="search">
+        <label class="visually-hidden" for="hack-search">Søg efter kategori eller hacktitel</label>
+        <span class="search-form__icon" aria-hidden="true">⌕</span>
+        <input id="hack-search" name="q" type="search" placeholder="Søg efter et hack" autocomplete="off" aria-controls="hack-results">
+      </form>
+      <noscript><p class="no-script">Slå JavaScript til for at filtrere listen. Fire af vejledningerne er endnu ikke klar.</p></noscript>
+      <section class="search-results" aria-labelledby="results-title">
+        <h2 id="results-title">UDFORSK HACKS</h2>
+        <p class="visually-hidden" id="unavailable-note">Vejledningen er endnu ikke klar. Aktivér kortet for at se status.</p>
+        <ul class="hack-list" id="hack-results">
+          <li data-hack-card>
+            <a class="hack-card" href="opvasker.html">
+              <span class="hack-card__category">KØKKEN</span>
+              <span class="hack-card__title">Klargør din opvasker</span>
+              <span class="hack-card__arrow" aria-hidden="true"></span>
+            </a>
+          </li>
+          <li data-hack-card>
+            <button class="hack-card" type="button" aria-describedby="unavailable-note">
+              <span class="hack-card__category">BADEVÆRELSE</span>
+              <span class="hack-card__title">Fjern kalk fra bruseren</span>
+              <span class="hack-card__arrow" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li data-hack-card>
+            <button class="hack-card" type="button" aria-describedby="unavailable-note">
+              <span class="hack-card__category">VASKERUM</span>
+              <span class="hack-card__title">Sådan vasker du tøj</span>
+              <span class="hack-card__arrow" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li data-hack-card>
+            <button class="hack-card" type="button" aria-describedby="unavailable-note">
+              <span class="hack-card__category">ØKONOMI</span>
+              <span class="hack-card__title">Lav dit første budget</span>
+              <span class="hack-card__arrow" aria-hidden="true"></span>
+            </button>
+          </li>
+          <li data-hack-card>
+            <button class="hack-card" type="button" aria-describedby="unavailable-note">
+              <span class="hack-card__category">VÆRKSTED</span>
+              <span class="hack-card__title">Hæng en hylde op</span>
+              <span class="hack-card__arrow" aria-hidden="true"></span>
+            </button>
+          </li>
+        </ul>
+        <p class="search-empty" hidden>Ingen hacks matcher din søgning. Prøv en anden kategori eller titel.</p>
+        <p class="visually-hidden" role="status" aria-atomic="true" id="search-status"></p>
+      </section>
+    </main>
+  </div>
+  <nav class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
+    <a class="bottom-nav__item" href="index.html">
+      <img src="assets/icon-home-inactive.png" width="20" height="21" alt="" aria-hidden="true">
+      <span>HJEM</span>
+    </a>
+    <a class="bottom-nav__item bottom-nav__item--active" href="soeg.html" aria-current="page">
+      <img src="assets/icon-search-active.png" width="20" height="21" alt="" aria-hidden="true">
+      <span>SØG</span>
+    </a>
+    <a class="bottom-nav__item" href="gemte.html">
+      <img src="assets/icon-heart.svg" width="24" height="21" alt="" aria-hidden="true">
+      <span>GEMT</span>
+    </a>
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+      <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
+      <span>VIDEO</span>
+    </a>
+  </nav>
+  <dialog class="notice" aria-labelledby="notice-title" aria-describedby="notice-description">
+    <h2 id="notice-title">Vejledningen er endnu ikke klar</h2>
+    <p id="notice-description"></p>
+    <form method="dialog"><button class="notice__close" type="submit">Tilbage til søgning</button></form>
+  </dialog>
+</body>
+</html>

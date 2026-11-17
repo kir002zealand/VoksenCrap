@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff6e9">
+  <meta name="description" content="Vælg en ting i køkkenet og find hjælp til hverdagens køkkenproblemer.">
+  <title>Køkkenet — VOKSEN CRAP!</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/kitchen.js" defer></script>
+</head>
+<body class="kitchen-page">
+  <a class="skip-link" href="#indhold">Gå til indhold</a>
+  <div class="page">
+    <header class="kitchen-header">
+      <a class="back-link" href="index.html">← TIL HUSET</a>
+    </header>
+    <main id="indhold" tabindex="-1">
+      <section class="kitchen-intro" aria-labelledby="kitchen-title">
+        <h1 id="kitchen-title">KØKKENET</h1>
+        <p>Tryk på det, du vil have hjælp til.</p>
+      </section>
+      <figure class="kitchen-illustration">
+        <img src="assets/koekken.png" width="359" height="364"
+          alt="Et køkken med limegrønne overskabe, vask, opvasker, underskabe, komfur med ovn og køleskab i en pink ramme.">
+        <!-- PDF page 2: dishwasher x=41..85, y=408..509; original image x=12, y=199. -->
+        <a class="kitchen-illustration__dishwasher" href="opvasker.html" aria-label="Sådan gør du opvaskemaskinen klar"></a>
+        <!-- PDF page 2: oven x=144..235, y=405..511, relative to illustration x=12, y=199. -->
+        <button class="kitchen-illustration__oven" type="button" aria-label="Rengør ovnen" aria-describedby="oven-status" data-hack="rengoer-ovnen" hidden></button>
+      </figure>
+      <section class="kitchen-prompt" aria-labelledby="prompt-title">
+        <h2 id="prompt-title">HVAD SKAL VI HJÆLPE MED?</h2>
+        <p>Vælg en ting i køkkenet ↑</p>
+      </section>
+      <p class="visually-hidden" id="oven-status">Vejledningen til rengøring af ovnen er endnu ikke klar.</p>
+      <noscript><p class="no-script">Vejledningen til rengøring af ovnen er endnu ikke klar.</p></noscript>
+    </main>
+  </div>
+  <nav class="bottom-nav bottom-nav--four" aria-label="Hovednavigation">
+    <a class="bottom-nav__item" href="index.html">
+      <img src="assets/icon-home-inactive.png" width="20" height="21" alt="" aria-hidden="true">
+      <span>HJEM</span>
+    </a>
+    <a class="bottom-nav__item" href="soeg.html">
+      <img src="assets/icon-search.svg" width="20" height="21" alt="" aria-hidden="true">
+      <span>SØG</span>
+    </a>
+    <a class="bottom-nav__item" href="gemte.html">
+      <img src="assets/icon-heart.svg" width="24" height="21" alt="" aria-hidden="true">
+      <span>GEMT</span>
+    </a>
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+      <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
+      <span>VIDEO</span>
+    </a>
+  </nav>
+  <dialog class="notice" aria-labelledby="notice-title" aria-describedby="notice-description">
+    <h2 id="notice-title">RENGØR OVNEN</h2>
+    <p id="notice-description">Vejledningen er endnu ikke klar.</p>
+    <form method="dialog"><button class="notice__close" type="submit">Tilbage til køkkenet</button></form>
+  </dialog>
+</body>
+</html>
