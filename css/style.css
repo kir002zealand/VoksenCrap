@@ -543,3 +543,278 @@ html {
 @media (min-width: 1024px) {
   html { scroll-padding-bottom: 12px; }
 }
+
+/* Home intro: two code-native facade halves, hinged at the outside edges. */
+.home-page { overflow-x: clip; }
+.home-page .dollhouse { perspective: 2200px; transform-style: preserve-3d; }
+.home-page .dollhouse__image { transform: translateZ(0); }
+.dollhouse__doors {
+  /* No intermediate stacking plane: doors and image share the house's 3D space. */
+  display: contents;
+  pointer-events: none;
+  visibility: hidden;
+}
+.dollhouse__door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-image: url('../assets/dukkehus-facade.svg');
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  backface-visibility: visible;
+  transform: translateZ(1px) rotateY(0deg);
+  pointer-events: none;
+  transition: transform 3.3s cubic-bezier(.45, 0, .2, 1);
+}
+.dollhouse__door--left {
+  left: 0;
+  transform-origin: left center;
+  background-position: left center;
+  clip-path: polygon(0 16.6%, 100% 0, 100% 100%, 0 100%);
+}
+.dollhouse__door--right {
+  right: 0;
+  transform-origin: right center;
+  background-position: right center;
+  clip-path: polygon(0 0, 100% 16.6%, 100% 100%, 0 100%);
+}
+.intro-pending .dollhouse__doors,
+.intro-complete .dollhouse__doors { visibility: visible; }
+.intro-opening .dollhouse__door--left,
+.intro-complete .dollhouse__door--left { transform: translateZ(-1px) rotateY(-270deg); }
+.intro-opening .dollhouse__door--right,
+.intro-complete .dollhouse__door--right { transform: translateZ(-1px) rotateY(270deg); }
+/* A skipped intro goes directly to the open state; it must not replay. */
+.intro-complete .dollhouse__door { transition: none; }
+.home-page .site-header,
+.home-page .instruction { transition: opacity .45s ease, transform .45s ease; }
+.intro-pending .site-header,
+.intro-pending .instruction { opacity: 0; transform: translateY(8px); }
+.intro-pending .dollhouse__kitchen { pointer-events: none; }
+.dollhouse__lights { position: absolute; inset: 0; pointer-events: none; }
+.dollhouse__room {
+  position: absolute;
+  width: 44.4%;
+  height: 18.2%;
+  background: rgb(255 211 91 / 0%);
+  box-shadow: inset 0 0 18px rgb(255 205 80 / 0%);
+  transition: background-color .5s ease, box-shadow .5s ease;
+  pointer-events: auto;
+}
+.dollhouse__room--bedroom, .dollhouse__room--bathroom,
+.dollhouse__room--kitchen, .dollhouse__room--workshop { left: 4.55%; }
+.dollhouse__room--balcony, .dollhouse__room--living,
+.dollhouse__room--laundry, .dollhouse__room--office { left: 51.07%; }
+.dollhouse__room--bedroom, .dollhouse__room--balcony { top: 17.69%; }
+.dollhouse__room--bathroom, .dollhouse__room--living { top: 37.18%; }
+.dollhouse__room--kitchen, .dollhouse__room--laundry { top: 56.86%; }
+.dollhouse__room--workshop, .dollhouse__room--office { top: 76.17%; }
+.dollhouse__kitchen { z-index: 2; transition: background-color .5s ease, box-shadow .5s ease; }
+.dollhouse__kitchen:focus-visible {
+  background: rgb(255 211 91 / 15%);
+  box-shadow: inset 0 0 18px rgb(255 205 80 / 30%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__room:hover, .dollhouse__kitchen:hover {
+    background: rgb(255 211 91 / 15%);
+    box-shadow: inset 0 0 18px rgb(255 205 80 / 30%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-page .dollhouse__doors { display: none; }
+  .home-page .site-header, .home-page .instruction {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .dollhouse__room, .dollhouse__kitchen { transition: none; }
+}
+
+/* First additional room: reuse the kitchen shell and existing hack-card styles. */
+.bathroom-page,
+.living-page,
+.bedroom-page,
+.balcony-page,
+.workshop-page,
+.office-page,
+.laundry-page {
+  --color-background: #fff6e9;
+  --color-lime: #d4f264;
+}
+.bathroom-page .kitchen-intro h1,
+.living-page .kitchen-intro h1,
+.bedroom-page .kitchen-intro h1,
+.balcony-page .kitchen-intro h1,
+.workshop-page .kitchen-intro h1,
+.office-page .kitchen-intro h1,
+.laundry-page .kitchen-intro h1 {
+  font-size: clamp(26px, 8.5vw, 34px);
+  overflow-wrap: anywhere;
+}
+.room-illustration { margin: 20px 20px 0; border: 7px solid var(--color-accent); border-radius: 12px; overflow: hidden; }
+.room-illustration img { display: block; width: 100%; height: auto; }
+.room-guides { margin: 24px 20px 0; }
+.room-guides > h2 { font-size: 17px; line-height: 1.4; margin: 0 2px 12px; }
+.room-guide { margin-top: 12px; border-radius: 16px; background: var(--color-navigation); }
+.room-guide summary { list-style: none; }
+.room-guide summary::-webkit-details-marker { display: none; }
+.room-guide[open] .hack-card__arrow { transform: translateY(-50%) rotate(135deg); }
+.room-guide__content { padding: 0 20px 18px; font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+.room-guide__content p { margin: 0 0 12px; }
+.room-guide__content p:last-child { margin-bottom: 0; }
+.room-guide__content ol { padding-left: 22px; }
+.room-guide__content li + li { margin-top: 8px; }
+.room-guide__content a { color: var(--color-primary); text-decoration: underline; }
+.dollhouse__bathroom {
+  position: absolute;
+  left: 4.55%;
+  top: 37.18%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__bathroom { pointer-events: none; }
+.dollhouse__bathroom:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__bathroom:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__bathroom { transition: none; }
+}
+
+/* Bathroom illustration uses the same responsive outer dimensions as the kitchen. */
+.bathroom-page .room-illustration,
+.living-page .room-illustration,
+.bedroom-page .room-illustration,
+.balcony-page .room-illustration,
+.workshop-page .room-illustration,
+.office-page .room-illustration,
+.laundry-page .room-illustration {
+  margin: 20px 19px 0 12px;
+}
+.bathroom-page .room-illustration img,
+.living-page .room-illustration img,
+.bedroom-page .room-illustration img,
+.balcony-page .room-illustration img,
+.workshop-page .room-illustration img,
+.office-page .room-illustration img,
+.laundry-page .room-illustration img {
+  width: 100%;
+  height: auto;
+}
+
+/* Living-room link uses the same feedback as the approved bathroom. */
+.dollhouse__living {
+  position: absolute;
+  left: 51.07%;
+  top: 37.18%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__living { pointer-events: none; }
+.dollhouse__living:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__living:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__living { transition: none; }
+}
+
+/* Bedroom: original dollhouse room at the top left. */
+.dollhouse__bedroom {
+  position: absolute;
+  left: 4.55%;
+  top: 17.69%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__bedroom { pointer-events: none; }
+.dollhouse__bedroom:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__bedroom:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__bedroom { transition: none; }
+}
+
+/* Balcony: top-right room, with the established focus and hover feedback. */
+.dollhouse__balcony {
+  position: absolute;
+  left: 51.07%;
+  top: 17.69%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__balcony { pointer-events: none; }
+.dollhouse__balcony:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__balcony:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__balcony { transition: none; }
+}
+
+/* Workshop: bottom-left room with shared interaction feedback. */
+.dollhouse__workshop {
+  position: absolute;
+  left: 4.55%;
+  top: 76.17%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__workshop { pointer-events: none; }
+.dollhouse__workshop:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__workshop:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__workshop { transition: none; }
+}
+
+/* Office: bottom-right room with the established interaction feedback. */
+.dollhouse__office {
+  position: absolute;
+  left: 51.07%;
+  top: 76.17%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__office { pointer-events: none; }
+.dollhouse__office:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__office:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__office { transition: none; }
+}
+
+/* Laundry: third row on the right, with the shared interaction feedback. */
+.dollhouse__laundry {
+  position: absolute;
+  left: 51.07%;
+  top: 56.86%;
+  width: 44.4%;
+  height: 18.2%;
+  z-index: 2;
+  transition: background-color .5s ease, box-shadow .5s ease;
+}
+.intro-pending .dollhouse__laundry { pointer-events: none; }
+.dollhouse__laundry:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__laundry:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__laundry { transition: none; }
+}

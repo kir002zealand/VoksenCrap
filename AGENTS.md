@@ -215,3 +215,51 @@ Efter brugerens bestilling bevares bundnavigationen under 1024 px. Fra 1024 px b
 Små pink kategoritekster på GEMTE bruger nu `--color-accent-text: #C52C60`, som giver cirka 5,38:1 mod hvid. Store pink overskrifter og illustrationer bevarer deres oprindelige farver. Opvaskerguidens 01–10 må ikke skjules med `aria-hidden`; de synlige numre skal kunne læses af hjælpemidler. Listen beholder `ol` og `role="list"` for listestøtte med nulstillede CSS-markører. Logoet kan ombrydes ved tekstforstørrelse. Scroll-padding giver plads til den faste mobilnavigation, og genopbygning af favoritlisten bevarer fokus på samme hack eller flytter det til eksempeloverskriften, hvis hacket fjernes.
 
 Kode- og kontrastkontrol er ikke fuld WCAG-verifikation. Browserzoom, tekstafstande, fokus, skærmlæseroplæsning og videoernes behov for undertekster/synstolkning skal stadig testes manuelt. Ingen undertekster må opfindes uden gennemgang af de faktiske videoer.
+
+### SEO og performance, 17. november 2026
+Sidetitler og meta descriptions er opdateret med sidernes faktiske formål. Publiceringsdomænet kendes endnu ikke; canonical-URL'er og sitemap afventer dette og må ikke udfyldes med et opdigtet domæne. `robots.txt` tillader crawling, inklusive OAI-SearchBot og GPTBot, efter brugerens accept af AI-søgning og træning. Robots er ikke adgangskontrol. Kontrollér regler og publiceringsmappe ved lancering; publicér ikke arbejdsfiler eller videomasterfiler ved et uheld.
+
+Navigationen bruger nu små PNG-gengivelser af de originale SVG-symboler ved 3× opløsning med uændrede HTML-mål. Originaler bevares. Store billeder over folden skal ikke automatisk lazy-loades. Ingen nye synlige tekster, FAQ'er, kilder, forfatteroplysninger eller strukturerede data er opfundet. Sådanne indholdsændringer afventer konkret dokumentation og bestilling. SEO/GEO-resultater og Core Web Vitals skal måles på den publicerede side og er ikke garanteret af disse ændringer.
+
+Videofelterne bruger nu komprimerede H.264/AAC-webkopier i `video/web/` med MP4 faststart, maksimalt 1280 px og uden beskæring. Originalerne i `video/` er bevaret. Se `video/web/README.md` for kildekobling. Controls, playsinline og preload=metadata bevares; ingen autoplay. Undertekster og indholdsvurdering afventer fortsat manuel gennemgang.
+
+### Bestilt introanimation
+Forsiden indlæser nu `js/home.js`: to nye dekorative SVG-facadelåger åbner med CSS-3D i 1,8 sekunder, derefter kommer sidens overskrifter frem. Facaden er kodebygget, ikke eksporteret fra Figma. Reduced motion udelader introen, tastaturfokus afslutter den, og uden JavaScript er det originale hus direkte synligt. Hover-lys på rum er dekorativt; kun køkkenet har en implementeret destination. Opret ikke syv fiktive rumlinks.
+
+### Revideret husåbning
+Lågerne åbner nu på 3,3 sekunder med rolig acceleration og opbremsning. Åben tilstand fastholder synlige låger ved ±96 grader; bagsiderne er synlige, og lågernes overlay ignorerer pointer-events. På skærme under 600 px får huset 40 px sidemargen for at give de åbne låger plads. Reduced motion springer fortsat introen over.
+
+### Låger foldes bag huset
+Den seneste brugerbestilling erstatter synlige sidelåger: begge låger drejer nu videre til ±270 grader i samme 3,3-sekunders bevægelse med uændret easing. Facadelåger og originalbilledet deler et preserve-3d-rum; slutpositionen er bag billedets plan. Ingen opacity-fade eller brat fjernelse bruges til normal åbning. De ekstra 40 px mobilmargener er fjernet, så det færdige hus igen har sine oprindelige proportioner og afstande. Browserkontrol af 3D-occlusion er stadig nødvendig.
+
+### Første nye rumside – afventer brugerens godkendelse
+`badevaerelse.html` er implementeret efter bestilling med original rumgrafik, to native details/summary-guides og fælles navigation. Forsidens badeværelsesområde linker dertil. Køkkenet er bevaret. Rådene henviser til producentvejledninger og er ikke udgivet som nye detaljesider. Søgning/favoritdata er endnu ikke koblet til de nye fold-ud-guides. Ingen andre nye rumsider må påbegyndes, før badeværelset er udtrykkeligt godkendt.
+
+### Vaskerum fjernet efter brugerens ønske
+Den nye vaskerumsside, dens asset og forsidens link er fjernet igen. Det dekorative vaskerum i husillustrationen bevares. Arbejd nu kun på brugerens kommende rettelser til badeværelset; begynd ikke næste rum uden ny godkendelse.
+
+### Badeværelsets proportioner
+Efter brugerens udtrykkelige ønske om at flytte møblerne bruges nu den AI-redigerede `assets/badevaerelse-hoej.png`. Den er ikke et originalt Figma-asset. Den oprindelige `badevaerelse.png` er bevaret. Den nye rumkomposition vises med width:100% og height:auto, uden strækning eller ekstra baggrundsfelter. Guidekortene er tidligere fjernet efter brugerens ønske.
+
+### Godkendt badeværelse og næste rum
+Brugeren har godkendt badeværelsets seneste illustration `badevaerelse-hoej-v2.png`, med håndklædeholderen flyttet ned. Bevar den høje naturligt komponerede illustration uden strækning eller letterboxing. Grøn boks viser HVAD SKAL VI HJÆLPE MED? og Vælg en ting i [rummet] ↑. Ingen ekstra overskrift eller guidekort under boksen. Vaskerummet er fortsat fjernet.
+
+Næste og eneste nye rum er `stue.html`, som genbruger denne struktur og fælles navigation; originalstuen er grundlag for en højere redigeret illustration. Kun stuens nye link på forsiden tilføjes. Vent på godkendelse før næste rum.
+
+### Ingen tekst i de nye rumillustrationer
+Brugerens seneste rettelse: stue og badeværelse bruger nu henholdsvis `stue-uden-tekst.png` og `badevaerelse-uden-tekst.png`. Rumnavnet vises kun som HTML-overskrift over illustrationen. Møbelplaceringer, inklusive det sænkede håndklæde, bevares.
+
+### Soveværelse – afventer godkendelse
+Brugeren har bedt om næste rum efter stuen. `sovevaerelse.html` er implementeret med naturligt komponeret illustration uden indlejret titel, grøn boks med Vælg en ting i soveværelset ↑ og uden ekstra guidekort. Original rumgrafik er bevaret som kilde. Forsidens øverste venstre rum linker dertil med hover- og fokusfeedback. Stop før næste rum og afvent godkendelse.
+
+### Altan – afventer godkendelse
+Soveværelset er godkendt ved brugerens bestilling af næste rum. `altan.html` er den eneste nye rumside i denne omgang: original altangrafik er grundlag for en højere redigeret illustration uden tekst, med naturlige proportioner og fælles navigation. Grøn boks viser Vælg en ting på altanen ↑. Ingen ekstra guidekort. Forsidens øverste højre rum linker til siden med hover- og fokusfeedback. Stop og afvent godkendelse før næste rum.
+
+### Værksted – afventer godkendelse
+Altanen er godkendt. `vaerksted.html` er den eneste nye rumside i denne omgang. Den genbruger fælles navigation og styles, høj originalbaseret redigeret illustration uden tekst og grøn boks med Vælg en ting i værkstedet ↑. Ingen ekstra guidekort. Forsidens nederste venstre rum linker dertil med hover- og fokusfeedback. Vent på godkendelse før næste rum.
+
+### Kontor – afventer godkendelse
+Værkstedet er godkendt. `kontor.html` er den eneste nye rumside i denne omgang med originalbaseret høj illustration uden tekst, naturlige møbelproportioner, grøn boks med Vælg en ting på kontoret ↑ og fælles navigation. Ingen ekstra guidekort. Forsidens nederste højre rum linker dertil med hover- og fokusfeedback. Vaskerummet er fortsat fjernet og må ikke genoprettes uden ny bestilling. Stop og afvent godkendelse.
+
+### Vaskerum genoprettet efter ny udtrykkelig godkendelse
+Kontoret er godkendt, og brugeren har nu bedt om vaskerummet igen. `vaskerum.html` er genoprettet med den seneste godkendte rumstruktur: høj illustration uden tekst, naturlige proportioner, grøn boks med Vælg en ting i vaskerummet ↑ og fælles navigation. Ingen ekstra guidekort. Link i husets tredje række til højre er tilføjet med hover og tastaturfokus. Alle otte rum har nu faktiske rumlinks; genstandsguides er fortsat kun implementeret dér, hvor de allerede fandtes. Vent på godkendelse før mere arbejde.

@@ -35,3 +35,38 @@ Opvaskemaskinen er PDF-side 2, (41, 408)–(85, 509). Det nye HTML-link er place
 `icon-heart-active.png`: aktivt blåt hjerte fra ny PDF, side 5, (235, 784)–(259, 805), 3× opløsning. Bruges på GEMTE HACKS uden CSS-filter.
 
 `icon-video-active.svg`: samme VIDEO-symbol fra ny PDF, side 1, (332, 784)–(356, 807), farvet blåt til den aktive VIDEO-side efter brugerens bestilling. Hvid baggrund bevares uden CSS-filter.
+
+## Weboptimerede navigationsikoner
+`icon-home.png`, `icon-search.png`, `icon-heart.png` og `icon-video-active.png` er gengivet direkte fra de eksisterende SVG-eksporter ved 3× opløsning. HTML bruger nu disse filer i de samme CSS-mål. De oprindelige SVG-filer er bevaret som kilder.
+
+## Introfacade
+`dukkehus-facade.svg` er en ny, kodebygget facade til den bestilte åbneanimation; den er ikke et Figma-asset. To CSS-halvdele bruger samme facade med udvendige hængselpunkter. Den originale rumillustration og køkkenlinket bevares.
+
+## Badeværelse
+`badevaerelse.png` genbruger originalt badeværelsesrum fra ny PDF, side 1, rektangel (25, 354)–(191, 456), gengivet ved 6× opløsning fra PDF-vektorerne. Ingen nye møbler eller erstatningsillustration er tilføjet.
+
+## Højere badeværelsesillustration
+`badevaerelse-hoej.png` (1240 × 1269) er en AI-redigeret variant af `badevaerelse.png`, lavet med det indbyggede imagegen-værktøj efter brugerens accept af at flytte møblerne. Originalen er bevaret. Redigeringsprompt: Omkomponér det eksisterende badeværelse til et næsten kvadratisk, højere rum. Bevar møblernes naturlige proportioner, oprindelige genstande, farver og kraftige konturer; fordel badekar, håndvask, spejl, skab, håndklæde og plante med mere væg- og gulvplads. Bevar teksten BADEVÆRELSE. Ingen ekstra møbler eller letterboxing.
+
+`badevaerelse-hoej-v2.png`: imagegen-redigering af den høje variant. Prompt: Flyt kun det pink håndklæde med sort holder og blå detaljer ned over badekarret; bevar størrelse, øvrige møbler, farver og rum. Tidligere version er bevaret.
+
+## Stue
+`stue-original.png`: oprindelig stue udtrukket fra ny PDF side 1, (199, 354)–(365, 456), ved 6× opløsning. `stue-hoej.png` (1240 × 1268) er en imagegen-redigering til en højere rumkomposition. Prompt: Bevar original sofa, puder, bord, lampe, vindue og plante med naturlige proportioner og tykke konturer. Fordel dem i et højere rum med naturlig gulvplacering; behold STUE og original palette. Ingen nye møbler, strækning eller letterboxing.
+
+## Illustrationer uden overskrift
+`stue-uden-tekst.png` og `badevaerelse-uden-tekst.png` er imagegen-redigeringer af de seneste godkendte varianter. Prompt: Fjern kun STUE/BADEVÆRELSE i billedets top og genskab samme baggrund. Bevar møbler, størrelse og positioner. Sidernes HTML-overskrifter bevares. Tidligere billeder er bevaret.
+
+## Soveværelse
+`sovevaerelse-original.png`: originalt rum fra ny PDF side 1, (25, 246)–(191, 348), 6× opløsning. `sovevaerelse-hoej.png` (1244 × 1265) er redigeret med imagegen. Prompt: Komponér det samme soveværelse naturligt i et højere rum uden tekst. Bevar seng, puder, pink tæppe, natbord med lampe, vindue, plante og billede i naturlige proportioner. Ingen ekstra møbler, strækning eller letterboxing.
+
+## Altan
+`altan-original.png`: originalt rum fra ny PDF side 1, (199, 246)–(365, 348), 6× opløsning. `altan-hoej.png` (1254 × 1254) er en imagegen-redigering. Prompt: Bevar samme stol, bord, kop, planter og rækværk i naturlige proportioner; fordel dem i en højere scene med mere himmel og gulv. Ingen tekst, nye genstande, strækning eller letterboxing.
+
+## Værksted
+`vaerksted-original.png`: originalt rum fra ny PDF side 1, (25, 570)–(191, 672), 6× opløsning. `vaerksted-hoej.png` (1254 × 1254) er en imagegen-redigering. Prompt: Bevar arbejdsbord, værktøjstavle, værktøj, vindue og to kasser. Fordel dem naturligt i et højere rum uden tekst, strækning, nye genstande eller letterboxing.
+
+## Kontor
+`kontor-original.png`: originalt rum fra ny PDF side 1, (199, 570)–(365, 672), 6× opløsning. `kontor-hoej.png` (1244 × 1265) er en imagegen-redigering. Prompt: Bevar skrivebord, laptop, kop, stol, billeder, vindue, plante og blå opbevaring. Fordel dem naturligt i et højere rum uden tekst, strækning eller nye genstande.
+
+## Genoprettet vaskerum
+`vaskerum-original.png`: ny PDF side 1, (199, 462)–(365, 564), 6× opløsning. `vaskerum-hoej.png` (1254 × 1254) er en imagegen-redigering. Prompt: Fordel samme vaskemaskine, kurv, tøj, vindue og beholdere naturligt i et højere rum uden tekst, strækning eller nye genstande.
