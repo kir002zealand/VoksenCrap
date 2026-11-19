@@ -532,6 +532,7 @@ button { font: inherit; }
     font-weight: 700;
     line-height: 20px;
   }
+  .bottom-nav__item > img { display: none; }
   .bottom-nav__item:hover { text-decoration: underline; }
 }
 
@@ -592,35 +593,6 @@ html {
 .intro-pending .site-header,
 .intro-pending .instruction { opacity: 0; transform: translateY(8px); }
 .intro-pending .dollhouse__kitchen { pointer-events: none; }
-.dollhouse__lights { position: absolute; inset: 0; pointer-events: none; }
-.dollhouse__room {
-  position: absolute;
-  width: 44.4%;
-  height: 18.2%;
-  background: rgb(255 211 91 / 0%);
-  box-shadow: inset 0 0 18px rgb(255 205 80 / 0%);
-  transition: background-color .5s ease, box-shadow .5s ease;
-  pointer-events: auto;
-}
-.dollhouse__room--bedroom, .dollhouse__room--bathroom,
-.dollhouse__room--kitchen, .dollhouse__room--workshop { left: 4.55%; }
-.dollhouse__room--balcony, .dollhouse__room--living,
-.dollhouse__room--laundry, .dollhouse__room--office { left: 51.07%; }
-.dollhouse__room--bedroom, .dollhouse__room--balcony { top: 17.69%; }
-.dollhouse__room--bathroom, .dollhouse__room--living { top: 37.18%; }
-.dollhouse__room--kitchen, .dollhouse__room--laundry { top: 56.86%; }
-.dollhouse__room--workshop, .dollhouse__room--office { top: 76.17%; }
-.dollhouse__kitchen { z-index: 2; transition: background-color .5s ease, box-shadow .5s ease; }
-.dollhouse__kitchen:focus-visible {
-  background: rgb(255 211 91 / 15%);
-  box-shadow: inset 0 0 18px rgb(255 205 80 / 30%);
-}
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__room:hover, .dollhouse__kitchen:hover {
-    background: rgb(255 211 91 / 15%);
-    box-shadow: inset 0 0 18px rgb(255 205 80 / 30%);
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   .home-page .dollhouse__doors { display: none; }
   .home-page .site-header, .home-page .instruction {
@@ -628,7 +600,6 @@ html {
     transform: none;
     transition: none;
   }
-  .dollhouse__room, .dollhouse__kitchen { transition: none; }
 }
 
 /* First additional room: reuse the kitchen shell and existing hack-card styles. */
@@ -673,13 +644,10 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__bathroom { pointer-events: none; }
-.dollhouse__bathroom:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__bathroom:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__bathroom:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__bathroom { transition: none; }
 }
@@ -713,13 +681,10 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__living { pointer-events: none; }
-.dollhouse__living:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__living:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__living:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__living { transition: none; }
 }
@@ -732,13 +697,10 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__bedroom { pointer-events: none; }
-.dollhouse__bedroom:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__bedroom:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__bedroom:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__bedroom { transition: none; }
 }
@@ -751,13 +713,10 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__balcony { pointer-events: none; }
-.dollhouse__balcony:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__balcony:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__balcony:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__balcony { transition: none; }
 }
@@ -770,13 +729,10 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__workshop { pointer-events: none; }
-.dollhouse__workshop:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__workshop:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__workshop:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__workshop { transition: none; }
 }
@@ -789,13 +745,10 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__office { pointer-events: none; }
-.dollhouse__office:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__office:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__office:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__office { transition: none; }
 }
@@ -808,13 +761,426 @@ html {
   width: 44.4%;
   height: 18.2%;
   z-index: 2;
-  transition: background-color .5s ease, box-shadow .5s ease;
+
 }
 .intro-pending .dollhouse__laundry { pointer-events: none; }
-.dollhouse__laundry:focus-visible { outline-offset: -4px; background: rgb(255 211 91 / 15%); }
-@media (hover: hover) and (pointer: fine) {
-  .dollhouse__laundry:hover { background: rgb(255 211 91 / 15%); box-shadow: inset 0 0 18px rgb(255 205 80 / 30%); }
-}
+.dollhouse__laundry:focus-visible { outline-offset: -4px;  }
 @media (prefers-reduced-motion: reduce) {
   .dollhouse__laundry { transition: none; }
+}
+
+/* Fixed hit areas; only a matching crop of the original image scales. */
+.dollhouse__link {
+  z-index: 2;
+  overflow: hidden;
+  background: transparent;
+}
+.dollhouse__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/dukkehus.png');
+  background-repeat: no-repeat;
+  background-size: var(--room-image-size);
+  background-position: var(--room-image-position);
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 250ms ease-in-out;
+  pointer-events: none;
+}
+.dollhouse__bedroom { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 8.18345324% 21.62591687%; }
+.dollhouse__balcony { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 91.85251799% 21.62591687%; }
+.dollhouse__bathroom { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 8.18345324% 45.45232274%; }
+.dollhouse__living { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 91.85251799% 45.45232274%; }
+.dollhouse__kitchen { --room-image-size: 225.30120482% 543.13725490%; --room-image-position: 8.17307692% 69.69026549%; }
+.dollhouse__laundry { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 91.85251799% 69.51100244%; }
+.dollhouse__workshop { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 8.18345324% 93.11735941%; }
+.dollhouse__office { --room-image-size: 225.22522523% 549.45054945%; --room-image-position: 91.85251799% 93.11735941%; }
+@media (hover: hover) and (pointer: fine) {
+  .dollhouse__link:hover::before { transform: scale(1.05); }
+}
+.dollhouse__link:focus-visible::before { transform: scale(1.05); }
+@media (prefers-reduced-motion: reduce) {
+  .dollhouse__link::before { transition: none; }
+  .dollhouse__link:hover::before,
+  .dollhouse__link:focus-visible::before { transform: none; }
+}
+
+/* Bedroom bed hotspot: proportional to the unchanged 1244 × 1265 illustration. */
+.bedroom-illustration { position: relative; }
+.bedroom-illustration__bed {
+  position: absolute;
+  left: 5.787781%;
+  top: 57.233202%;
+  width: 55.948553%;
+  height: 29.169960%;
+  border-radius: 8px;
+}
+.bedroom-illustration__bed:focus-visible { outline-offset: -4px; }
+/* Restore the placeholder background only for this guide, which has no video. */
+.bedding-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Mirror hotspot follows the unchanged 1240 × 1269 bathroom illustration. */
+.bathroom-illustration { position: relative; }
+.bathroom-illustration__mirror {
+  position: absolute;
+  left: 63.709677%;
+  top: 25.847124%;
+  width: 20.725806%;
+  height: 21.670607%;
+  border-radius: 12px;
+}
+.bathroom-illustration__mirror:focus-visible { outline-offset: -4px; }
+.mirror-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Sofa hotspot follows the existing image, with a cutout around the table. */
+.living-illustration { position: relative; }
+.living-illustration__sofa {
+  position: absolute;
+  left: 9.354839%;
+  top: 63.880126%;
+  width: 51.774194%;
+  height: 24.290221%;
+  clip-path: polygon(0 0, 100% 0, 100% 59%, 85% 59%, 85% 86%, 90% 86%, 90% 100%, 0 100%);
+}
+/* Keep the keyboard focus indicator within the clipped shape. */
+.living-illustration__sofa:focus-visible {
+  outline-offset: -5px;
+  box-shadow: inset 0 0 0 4px var(--color-primary);
+}
+.sofa-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Washing-machine hotspot follows the unchanged 1254 × 1254 illustration. */
+.laundry-illustration { position: relative; }
+.laundry-illustration__washer {
+  position: absolute;
+  left: 5.741627%;
+  top: 57.496013%;
+  width: 39.074960%;
+  height: 24.401914%;
+  border-radius: 12px;
+}
+.laundry-illustration__washer:focus-visible { outline-offset: -4px; }
+.laundry-guide-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Floor toolbox hotspot follows the unchanged 1254 × 1254 illustration. */
+.workshop-illustration { position: relative; }
+.workshop-illustration__toolbox {
+  position: absolute;
+  left: 67.703349%;
+  top: 69.138756%;
+  width: 23.365231%;
+  height: 17.464115%;
+  border-radius: 12px;
+}
+.workshop-illustration__toolbox:focus-visible { outline-offset: -4px; }
+.toolbox-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Laptop hotspot follows the unchanged 1244 × 1265 office illustration. */
+.office-illustration { position: relative; }
+.office-illustration__laptop {
+  position: absolute;
+  left: 19.051447%;
+  top: 50.118577%;
+  width: 33.360129%;
+  height: 18.498024%;
+  clip-path: polygon(8% 0, 92% 0, 92% 73%, 100% 73%, 92% 100%, 8% 100%, 0 73%, 8% 73%);
+}
+.office-illustration__laptop:focus-visible {
+  outline-offset: -5px;
+  box-shadow: inset 0 0 0 4px var(--color-primary);
+}
+.files-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Green potted plant hotspot follows the unchanged 1254 × 1254 illustration. */
+.balcony-illustration { position: relative; }
+.balcony-illustration__plant {
+  position: absolute;
+  left: 39.473684%;
+  top: 42.503987%;
+  width: 26.076555%;
+  height: 35.406699%;
+  clip-path: polygon(55% 0, 64% 0, 66% 38%, 94% 29%, 100% 32%, 100% 42%, 77% 53%, 77% 100%, 13% 100%, 13% 60%, 40% 60%, 40% 52%, 0 29%, 0 17%, 8% 17%, 40% 38%, 40% 23%);
+}
+.balcony-illustration__plant:focus-visible {
+  outline-offset: -5px;
+  box-shadow: inset 0 0 0 4px var(--color-primary);
+}
+.plant-page .video-placeholder { background: var(--color-video-placeholder); }
+
+/* Guide links keep their existing geometry and keyboard focus styles. */
+.guide-hotspot { cursor: pointer; }
+
+/* Object-only zoom: original image pixels through contour masks.
+   Decorative siblings never intercept input; the links keep their original geometry. */
+.guide-object {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 250ms ease-in-out;
+}
+.guide-object--dishwasher,
+.guide-backdrop--dishwasher {
+  left: 8.07799400%; top: 57.41758200%;
+  width: 12.25626700%; height: 27.74725300%;
+  background-image: url('../assets/koekken.png');
+  background-size: 815.90911817% 360.39603632%;
+  background-position: 9.20634867% 79.46768031%;
+  mask-image: url('../assets/object-masks/dishwasher.svg');
+  -webkit-mask-image: url('../assets/object-masks/dishwasher.svg');
+}
+.guide-object--bed,
+.guide-backdrop--bed {
+  left: 5.78778100%; top: 57.23320200%;
+  width: 55.94855300%; height: 29.16996000%;
+  background-image: url('../assets/sovevaerelse-hoej.png');
+  background-size: 178.73563236% 342.81843376%;
+  background-position: 13.13868532% 80.80357148%;
+  mask-image: url('../assets/object-masks/bed.svg');
+  -webkit-mask-image: url('../assets/object-masks/bed.svg');
+}
+.guide-object--mirror,
+.guide-backdrop--mirror {
+  left: 63.70967700%; top: 25.84712400%;
+  width: 20.72580600%; height: 21.67060700%;
+  background-image: url('../assets/badevaerelse-uden-tekst.png');
+  background-size: 482.49028289% 461.45454071%;
+  background-position: 80.36622485% 32.99798838%;
+  mask-image: url('../assets/object-masks/mirror.svg');
+  -webkit-mask-image: url('../assets/object-masks/mirror.svg');
+}
+.guide-object--sofa,
+.guide-backdrop--sofa {
+  left: 9.35483900%; top: 63.88012600%;
+  width: 51.77419400%; height: 24.29022100%;
+  background-image: url('../assets/stue-uden-tekst.png');
+  background-size: 193.14641576% 411.68830864%;
+  background-position: 19.39799409% 84.37499996%;
+  mask-image: url('../assets/object-masks/sofa.svg');
+  -webkit-mask-image: url('../assets/object-masks/sofa.svg');
+}
+.guide-object--washer,
+.guide-backdrop--washer {
+  left: 5.74162700%; top: 57.49601300%;
+  width: 39.07496000%; height: 24.40191400%;
+  background-image: url('../assets/vaskerum-hoej.png');
+  background-size: 255.91836818% 409.80391948%;
+  background-position: 9.42408409% 76.05485276%;
+  mask-image: url('../assets/object-masks/washer.svg');
+  -webkit-mask-image: url('../assets/object-masks/washer.svg');
+}
+.guide-object--toolbox,
+.guide-backdrop--toolbox {
+  left: 67.70334900%; top: 69.13875600%;
+  width: 23.36523100%; height: 17.46411500%;
+  background-image: url('../assets/vaerksted-hoej.png');
+  background-size: 427.98635288% 572.60273424%;
+  background-position: 88.34547280% 83.76811614%;
+  mask-image: url('../assets/object-masks/toolbox.svg');
+  -webkit-mask-image: url('../assets/object-masks/toolbox.svg');
+}
+.guide-object--laptop,
+.guide-backdrop--laptop {
+  left: 19.05144700%; top: 50.11857700%;
+  width: 33.36012900%; height: 18.49802400%;
+  background-image: url('../assets/kontor-hoej.png');
+  background-size: 299.75903271% 540.59828228%;
+  background-position: 28.58866128% 61.49369556%;
+  mask-image: url('../assets/object-masks/laptop.svg');
+  -webkit-mask-image: url('../assets/object-masks/laptop.svg');
+}
+.guide-object--plant,
+.guide-backdrop--plant {
+  left: 39.47368400%; top: 42.50398700%;
+  width: 26.07655500%; height: 35.40669900%;
+  background-image: url('../assets/altan-hoej.png');
+  background-size: 383.48623888% 282.43242896%;
+  background-position: 53.39805795% 65.80246921%;
+  mask-image: url('../assets/object-masks/plant.svg');
+  -webkit-mask-image: url('../assets/object-masks/plant.svg');
+}
+@media (hover: hover) and (pointer: fine) {
+  .guide-hotspot:hover + .guide-object { transform: scale(1.035); }
+}
+.guide-hotspot:focus-visible + .guide-object,
+.guide-hotspot:active + .guide-object { transform: scale(1.035); }
+@media (prefers-reduced-motion: reduce) {
+  .guide-object { transition: none; }
+  .guide-hotspot:hover + .guide-object,
+  .guide-hotspot:focus-visible + .guide-object,
+  .guide-hotspot:active + .guide-object { transform: none; }
+}
+/* Unsupported masks must never expose a rectangular image crop. */
+@supports not ((mask-image: url('')) or (-webkit-mask-image: url(''))) {
+  .guide-object { display: none; }
+}
+
+/* Stationary paint patches cover the original object before its single visible
+   artwork layer is transformed. Decorative layers do not receive pointer input. */
+.guide-backdrop {
+  position: absolute;
+  pointer-events: none;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+/* Keep link focus above the decorative object. */
+.guide-hotspot:focus-visible { z-index: 2; }
+.guide-backdrop--dishwasher {
+  background-image: url('../assets/object-backdrops/dishwasher.svg');
+  mask-image: url('../assets/object-backdrops/dishwasher-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/dishwasher-mask.svg');
+}
+.guide-backdrop--bed {
+  background-image: url('../assets/object-backdrops/bed.svg');
+  mask-image: url('../assets/object-backdrops/bed-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/bed-mask.svg');
+}
+.guide-backdrop--mirror {
+  background-image: url('../assets/object-backdrops/mirror.svg');
+  mask-image: url('../assets/object-backdrops/mirror-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/mirror-mask.svg');
+}
+.guide-backdrop--sofa {
+  background-image: url('../assets/object-backdrops/sofa.svg');
+  mask-image: url('../assets/object-backdrops/sofa-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/sofa-mask.svg');
+}
+.guide-backdrop--washer {
+  background-image: url('../assets/object-backdrops/washer.svg');
+  mask-image: url('../assets/object-backdrops/washer-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/washer-mask.svg');
+}
+.guide-backdrop--toolbox {
+  background-image: url('../assets/object-backdrops/toolbox.svg');
+  mask-image: url('../assets/object-backdrops/toolbox-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/toolbox-mask.svg');
+}
+.guide-backdrop--laptop {
+  background-image: url('../assets/object-backdrops/laptop.svg');
+  mask-image: url('../assets/object-backdrops/laptop-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/laptop-mask.svg');
+}
+.guide-backdrop--plant {
+  background-image: url('../assets/object-backdrops/plant.svg');
+  mask-image: url('../assets/object-backdrops/plant-mask.svg');
+  -webkit-mask-image: url('../assets/object-backdrops/plant-mask.svg');
+}
+@supports not ((mask-image: url('')) or (-webkit-mask-image: url(''))) {
+  .guide-backdrop { display: none; }
+}
+
+/* Do not expose a paint fringe around stationary objects. Keep the cover until
+   the 250ms return animation finishes, then restore the untouched room image. */
+.guide-backdrop {
+  visibility: hidden;
+  transition: visibility 0s linear 250ms;
+}
+@media (hover: hover) and (pointer: fine) {
+  figure:has(> .guide-hotspot:hover) > .guide-backdrop {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+figure:has(> .guide-hotspot:focus-visible) > .guide-backdrop,
+figure:has(> .guide-hotspot:active) > .guide-backdrop {
+  visibility: visible;
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-backdrop { display: none; }
+}
+
+/* About the brand: reuse the video page, cards, palette and narrow composition. */
+.about-page { --color-lime: #d4f264; }
+.about-page .video-intro { margin: 28px 22px 24px; }
+.about-page .video-intro h1 {
+  font-size: clamp(30px, 8.5vw, 38px);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+.about-page .video-intro h1 span { color: var(--color-accent-text); }
+.about-page .video-intro > p:last-child {
+  margin: 16px 0 0;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.about-page .about-eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-primary);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+.about-card {
+  margin: 0 18px 20px;
+  padding: 22px 20px;
+  background: var(--color-navigation);
+  border-radius: 16px;
+}
+.about-card h2,
+.about-how h2,
+.about-films > h2 { margin: 0; font-size: 22px; line-height: 1.3; }
+.about-card p,
+.about-how p { margin: 14px 0 0; font-size: 15px; line-height: 1.65; }
+.about-how {
+  margin: 0 18px 28px;
+  padding: 22px 20px;
+  border-radius: 16px;
+  background: var(--color-lime);
+}
+.about-house-link {
+  display: inline-block;
+  margin-top: 14px;
+  padding-block: 8px;
+  color: var(--color-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+.about-films { margin-bottom: 24px; }
+.about-films > h2 { margin: 0 22px 16px; }
+.about-page .video-card { min-height: 0; }
+.about-page .video-card .video-placeholder { height: auto; }
+.about-contact .about-contact__notice { font-size: 13px; }
+.about-contact__details { margin: 18px 0 0; }
+.about-contact__details > div + div { margin-top: 14px; }
+.about-contact__details dt { color: var(--color-primary); font-size: 14px; font-weight: 700; }
+.about-contact__details dd { margin: 4px 0 0; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+
+.about-films .video-card h3 { margin: 0; font-size: 20px; line-height: 26px; letter-spacing: -.3px; }
+
+.about-contact__details a { color: var(--color-primary); text-underline-offset: 3px; }
+
+/* Temporary room-entry camera; no changes to the underlying page layout. */
+.room-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  touch-action: none;
+  cursor: progress;
+}
+.room-transition__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  max-width: none;
+  transform-origin: 0 0;
+  will-change: transform;
+  pointer-events: none;
 }

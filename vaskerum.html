@@ -7,6 +7,8 @@
   <meta name="description" content="Udforsk vaskerummet i VOKSEN CRAP! og vend tilbage til dukkehuset for at gå på opdagelse i de andre rum.">
   <title>Vaskerummet – udforsk dit dukkehus | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
 </head>
 <body class="laundry-page">
@@ -20,8 +22,12 @@
         <h1 id="laundry-title">VASKERUMMET</h1>
         <p>Fra vasketøjsbunke til lidt mere styr på hverdagen.</p>
       </section>
-      <figure class="room-illustration">
+      <figure class="room-illustration laundry-illustration">
         <img src="assets/vaskerum-hoej.png" width="1254" height="1254" alt="Dukkehusets vaskerum med vaskemaskine, vasketøjskurv, ophængt tøj, vaskemiddel og vindue.">
+        <!-- Washing machine in the 1254 × 1254 image: x=72..562, y=721..1027. -->
+        <span class="guide-backdrop guide-backdrop--washer" aria-hidden="true"></span>
+        <a class="laundry-illustration__washer guide-hotspot" href="toejvask.html" aria-label="Sådan vasker du tøj i vaskemaskinen"></a>
+        <span class="guide-object guide-object--washer" aria-hidden="true"></span>
       </figure>
       <section class="kitchen-prompt" aria-labelledby="laundry-prompt">
         <h2 id="laundry-prompt">HVAD SKAL VI HJÆLPE MED?</h2>
@@ -45,9 +51,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>

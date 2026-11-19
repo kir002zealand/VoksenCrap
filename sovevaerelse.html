@@ -7,6 +7,8 @@
   <meta name="description" content="Udforsk soveværelset i VOKSEN CRAP! og vend tilbage til dukkehuset for at gå på opdagelse i de andre rum.">
   <title>Soveværelset – udforsk dit dukkehus | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
 </head>
 <body class="bedroom-page">
@@ -20,8 +22,12 @@
         <h1 id="bedroom-title">SOVEVÆRELSET</h1>
         <p>Ro på værelset. Og lidt mere styr på hverdagen.</p>
       </section>
-      <figure class="room-illustration">
+      <figure class="room-illustration bedroom-illustration">
         <img src="assets/sovevaerelse-hoej.png" width="1244" height="1265" alt="Dukkehusets soveværelse med seng, pink sengetæppe, natbord med lampe, vindue og plante.">
+        <!-- Bed bounds in the 1244 × 1265 source image: x=72..768, y=724..1093. -->
+        <span class="guide-backdrop guide-backdrop--bed" aria-hidden="true"></span>
+        <a class="bedroom-illustration__bed guide-hotspot" href="sengetoej.html" aria-label="Sådan skifter du sengetøj"></a>
+        <span class="guide-object guide-object--bed" aria-hidden="true"></span>
       </figure>
       <section class="kitchen-prompt" aria-labelledby="bedroom-prompt">
         <h2 id="bedroom-prompt">HVAD SKAL VI HJÆLPE MED?</h2>
@@ -45,9 +51,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>

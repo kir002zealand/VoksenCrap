@@ -7,7 +7,9 @@
   <meta name="description" content="Udforsk det illustrerede køkken, og åbn guiden til at klargøre din opvasker til første brug.">
   <title>Køkkenet – hjælp til køkkenets opgaver | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
   <script src="js/kitchen.js" defer></script>
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
 </head>
 <body class="kitchen-page">
@@ -25,7 +27,9 @@
         <img src="assets/koekken.png" width="359" height="364"
           alt="Et køkken med limegrønne overskabe, vask, opvasker, underskabe, komfur med ovn og køleskab i en pink ramme.">
         <!-- PDF page 2: dishwasher x=41..85, y=408..509; original image x=12, y=199. -->
-        <a class="kitchen-illustration__dishwasher" href="opvasker.html" aria-label="Sådan gør du opvaskemaskinen klar"></a>
+        <span class="guide-backdrop guide-backdrop--dishwasher" aria-hidden="true"></span>
+        <a class="kitchen-illustration__dishwasher guide-hotspot" href="opvasker.html" aria-label="Sådan gør du opvaskemaskinen klar"></a>
+        <span class="guide-object guide-object--dishwasher" aria-hidden="true"></span>
         <!-- PDF page 2: oven x=144..235, y=405..511, relative to illustration x=12, y=199. -->
         <button class="kitchen-illustration__oven" type="button" aria-label="Rengør ovnen" aria-describedby="oven-status" data-hack="rengoer-ovnen" hidden></button>
       </figure>
@@ -53,9 +57,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
   <dialog class="notice" aria-labelledby="notice-title" aria-describedby="notice-description">

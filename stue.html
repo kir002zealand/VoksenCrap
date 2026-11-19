@@ -7,6 +7,8 @@
   <meta name="description" content="Udforsk stuen i VOKSEN CRAP! og vend tilbage til dukkehuset for at gå på opdagelse i de andre rum.">
   <title>Stuen – udforsk dit dukkehus | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
 </head>
 <body class="living-page">
@@ -20,8 +22,12 @@
         <h1 id="living-title">STUEN</h1>
         <p>Plads til hygge. Og lidt mere styr på hverdagen.</p>
       </section>
-      <figure class="room-illustration">
+      <figure class="room-illustration living-illustration">
         <img src="assets/stue-uden-tekst.png" width="1240" height="1268" alt="Dukkehusets stue med blå sofa, farverige puder, sofabord, gulvlampe, vindue og plante.">
+        <!-- Sofa bounds in the 1240 × 1268 image: x=116..758, y=810..1118. The lower-right cutout avoids the table. -->
+        <span class="guide-backdrop guide-backdrop--sofa" aria-hidden="true"></span>
+        <a class="living-illustration__sofa guide-hotspot" href="sofa.html" aria-label="Sådan støvsuger du sofaen"></a>
+        <span class="guide-object guide-object--sofa" aria-hidden="true"></span>
       </figure>
       <section class="kitchen-prompt" aria-labelledby="living-prompt">
         <h2 id="living-prompt">HVAD SKAL VI HJÆLPE MED?</h2>
@@ -45,9 +51,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>

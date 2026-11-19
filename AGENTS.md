@@ -263,3 +263,6 @@ Værkstedet er godkendt. `kontor.html` er den eneste nye rumside i denne omgang 
 
 ### Vaskerum genoprettet efter ny udtrykkelig godkendelse
 Kontoret er godkendt, og brugeren har nu bedt om vaskerummet igen. `vaskerum.html` er genoprettet med den seneste godkendte rumstruktur: høj illustration uden tekst, naturlige proportioner, grøn boks med Vælg en ting i vaskerummet ↑ og fælles navigation. Ingen ekstra guidekort. Link i husets tredje række til højre er tilføjet med hover og tastaturfokus. Alle otte rum har nu faktiske rumlinks; genstandsguides er fortsat kun implementeret dér, hvor de allerede fandtes. Vent på godkendelse før mere arbejde.
+
+### Bag om Voksen Crap – 18. november 2026
+Efter brugerens bestilling er den tidligere videoside nu en brandside med Om os, forklaring af dukkehuset, de to eksisterende videoer og en kontaktsektion. URL'en er fortsat `video.html`. Alle menupunkter til siden hedder BAG OM og har det tilgængelige navn Bag om Voksen Crap; eksisterende ikon og aktiv tilstand er bevaret. Kontaktoplysninger er leveret af brugeren: `kontakt@voksencrap.dk` med mailto-link og `@voksencrap` på Instagram og TikTok med profillinks. Videoernes MP4-kilder og native kontroller bevares. Brandteksten omtaler et hold uden opdigtede navne, historik eller kvalifikationer. Denne bestilling har forrang frem for den gamle videosidebeskrivelse ovenfor.

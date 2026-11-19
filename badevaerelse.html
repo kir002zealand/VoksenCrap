@@ -7,6 +7,8 @@
   <meta name="description" content="Find små, praktiske råd til rengøring og kalk i badeværelset. Udforsk VOKSEN CRAP!'s illustrerede badeværelse.">
   <title>Badeværelset – rengøring og kalk | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
 </head>
 <body class="bathroom-page">
@@ -20,8 +22,12 @@
         <h1 id="bathroom-title">BADEVÆRELSET</h1>
         <p>Lidt mindre kalk. Lidt mere styr på voksenlivet.</p>
       </section>
-      <figure class="room-illustration">
+      <figure class="room-illustration bathroom-illustration">
         <img src="assets/badevaerelse-uden-tekst.png" width="1240" height="1269" alt="Dukkehusets badeværelse med badekar, håndvask, spejl og et håndklæde i pink.">
+        <!-- Mirror bounds in the 1240 × 1269 source: x=790..1047, y=328..603. -->
+        <span class="guide-backdrop guide-backdrop--mirror" aria-hidden="true"></span>
+        <a class="bathroom-illustration__mirror guide-hotspot" href="spejl.html" aria-label="Sådan pudser du spejlet uden striber"></a>
+        <span class="guide-object guide-object--mirror" aria-hidden="true"></span>
       </figure>
       <section class="kitchen-prompt" aria-labelledby="bathroom-prompt">
         <h2 id="bathroom-prompt">HVAD SKAL VI HJÆLPE MED?</h2>
@@ -45,9 +51,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>

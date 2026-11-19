@@ -4,20 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fff8f2">
-  <meta name="description" content="Se reklamevideoen og fraklip fra VOKSEN CRAP! med browserens videokontroller.">
-  <title>Reklame og fraklip – VoksenCrap på film | VOKSEN CRAP!</title>
+  <meta name="description" content="Mød Voksen Crap: korte guides til unge, der er flyttet hjemmefra. Læs om os, se reklame og fraklip, og find vores kontaktområde.">
+  <title>Bag om Voksen Crap | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/navigation.js" defer></script>
 </head>
-<body class="video-page">
+<body class="video-page about-page">
   <a class="skip-link" href="#indhold">Gå til indhold</a>
   <div class="page">
     <main id="indhold" tabindex="-1">
       <header class="video-intro">
-        <h1>VoksenCrap på film</h1>
+        <h1>Bag om<br><span>Voksen Crap</span></h1>
+        <p>Voksenlivet kommer uden brugsanvisning.<br>Vi hjælper dig i gang.</p>
       </header>
+      <section class="about-card" aria-labelledby="about-title">
+        <h2 id="about-title">Om os</h2>
+        <p>Flyttet hjemmefra? Tillykke med friheden. Og vasketøjet, rengøringen og alle de andre ting, der pludselig er dit ansvar.</p>
+        <p>Voksen Crap er en app til unge, der skal lære at klare hverdagens praktiske opgaver selv. Vi samler korte, letforståelige instruktionsvideoer og trin-for-trin-guides, så det bliver lettere at finde ud af, hvor du skal starte.</p>
+        <p>Bag Voksen Crap står et hold med en fælles idé: Du behøver ikke kunne det hele på forhånd. Vi gør de små voksenopgaver mere overskuelige – med konkrete forklaringer og et glimt i øjet.</p>
+      </section>
+      <section class="about-how" aria-labelledby="house-explainer-title">
+        <h2 id="house-explainer-title">Ét hus. Én opgave ad gangen.</h2>
+        <p>På forsiden folder dukkehuset sig ud. Vælg et rum, tryk på en genstand, og find hjælp til en opgave, der hører til netop dér. Fra første tøjvask til en opvasker, der skal gøres klar.</p>
+        <a class="about-house-link" href="index.html">Gå på opdagelse i huset <span aria-hidden="true">→</span></a>
+      </section>
+      <section class="about-films" aria-labelledby="films-title">
+        <h2 id="films-title">Voksen Crap på film</h2>
       <section class="video-card" aria-labelledby="advert-title">
-        <h2 id="advert-title">Reklame for appen</h2>
+        <h3 id="advert-title">Reklame for appen</h3>
         <figure class="video-placeholder video-placeholder--loaded" aria-label="Reklame for appen">
           <video controls playsinline preload="metadata" aria-label="Mike jønson 1.1 — reklame for appen">
             <source src="video/web/reklame.mp4" type="video/mp4">
@@ -26,13 +40,23 @@
         </figure>
       </section>
       <section class="video-card" aria-labelledby="outtakes-title">
-        <h2 id="outtakes-title">Fraklip</h2>
+        <h3 id="outtakes-title">Fraklip</h3>
         <figure class="video-placeholder video-placeholder--loaded" aria-label="Fraklip">
           <video controls playsinline preload="metadata" aria-label="Fraklip 1.2 — bag kulisserne">
             <source src="video/web/fraklip.mp4" type="video/mp4">
             Din browser understøtter ikke video. <a href="video/web/fraklip.mp4">Åbn fraklipvideoen</a>.
           </video>
         </figure>
+      </section>
+      </section>
+      <section class="about-card about-contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Sig hej!</h2>
+        <p>Et spørgsmål, en idé eller en voksenopgave, der driller? Vi vil gerne høre fra dig.</p>
+        <dl class="about-contact__details">
+          <div><dt>E-mail</dt><dd><a href="mailto:kontakt@voksencrap.dk">kontakt@voksencrap.dk</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/voksencrap/">@voksencrap</a></dd></div>
+          <div><dt>TikTok</dt><dd><a href="https://www.tiktok.com/@voksencrap">@voksencrap</a></dd></div>
+        </dl>
       </section>
     </main>
   </div>
@@ -52,9 +76,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video bottom-nav__item--active" href="video.html" aria-current="page">
+    <a class="bottom-nav__item bottom-nav__item--video bottom-nav__item--active" href="video.html" aria-label="Bag om Voksen Crap" aria-current="page">
       <img src="assets/icon-video-active.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>

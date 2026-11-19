@@ -7,6 +7,8 @@
   <meta name="description" content="Find hjælp til hverdagens praktiske opgaver i VOKSEN CRAP! Udforsk dukkehuset, gå til køkkenet og læs guiden til at klargøre din opvasker.">
   <title>VOKSEN CRAP! – hjælp til hverdagens voksenproblemer</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
   <script src="js/home.js" defer></script>
 </head>
@@ -22,28 +24,18 @@
       <div class="dollhouse">
         <img class="dollhouse__image" src="assets/dukkehus.png" width="374" height="554"
           alt="Et pink dukkehus med soveværelse, altan, badeværelse, stue, køkken, vaskerum, værksted og kontor.">
-        <div class="dollhouse__lights" aria-hidden="true">
-          <span class="dollhouse__room dollhouse__room--bedroom"></span>
-          <span class="dollhouse__room dollhouse__room--balcony"></span>
-          <span class="dollhouse__room dollhouse__room--bathroom"></span>
-          <span class="dollhouse__room dollhouse__room--living"></span>
-          <span class="dollhouse__room dollhouse__room--kitchen"></span>
-          <span class="dollhouse__room dollhouse__room--laundry"></span>
-          <span class="dollhouse__room dollhouse__room--workshop"></span>
-          <span class="dollhouse__room dollhouse__room--office"></span>
-        </div>
         <div class="dollhouse__doors" aria-hidden="true">
           <span class="dollhouse__door dollhouse__door--left"></span>
           <span class="dollhouse__door dollhouse__door--right"></span>
         </div>
-        <a class="dollhouse__laundry" href="vaskerum.html" aria-label="Gå til vaskerummet"></a>
-        <a class="dollhouse__office" href="kontor.html" aria-label="Gå til kontoret"></a>
-        <a class="dollhouse__workshop" href="vaerksted.html" aria-label="Gå til værkstedet"></a>
-        <a class="dollhouse__balcony" href="altan.html" aria-label="Gå til altanen"></a>
-        <a class="dollhouse__bedroom" href="sovevaerelse.html" aria-label="Gå til soveværelset"></a>
-        <a class="dollhouse__living" href="stue.html" aria-label="Gå til stuen"></a>
-        <a class="dollhouse__bathroom" href="badevaerelse.html" aria-label="Gå til badeværelset"></a>
-        <a class="dollhouse__kitchen" href="koekken.html" aria-label="Gå til køkkenet"></a>
+        <a class="dollhouse__laundry dollhouse__link" href="vaskerum.html" aria-label="Gå til vaskerummet"></a>
+        <a class="dollhouse__office dollhouse__link" href="kontor.html" aria-label="Gå til kontoret"></a>
+        <a class="dollhouse__workshop dollhouse__link" href="vaerksted.html" aria-label="Gå til værkstedet"></a>
+        <a class="dollhouse__balcony dollhouse__link" href="altan.html" aria-label="Gå til altanen"></a>
+        <a class="dollhouse__bedroom dollhouse__link" href="sovevaerelse.html" aria-label="Gå til soveværelset"></a>
+        <a class="dollhouse__living dollhouse__link" href="stue.html" aria-label="Gå til stuen"></a>
+        <a class="dollhouse__bathroom dollhouse__link" href="badevaerelse.html" aria-label="Gå til badeværelset"></a>
+        <a class="dollhouse__kitchen dollhouse__link" href="koekken.html" aria-label="Gå til køkkenet"></a>
       </div>
     </main>
   </div>
@@ -63,9 +55,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>

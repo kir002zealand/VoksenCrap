@@ -1,0 +1,60 @@
+/* Ordinary document navigation with an opt-in shared room illustration. */
+@view-transition { navigation: auto; }
+.room-entry-source,
+.room-entry-target { view-transition-name: room-portal; }
+/* Freeze the small room's hover crop while the browser captures it. */
+.dollhouse__link.room-entry-source::before { transform: none; transition: none; }
+
+html.room-entry-transition::view-transition-group(*) {
+  animation-duration: 1050ms;
+  animation-timing-function: cubic-bezier(.45, 0, .2, 1);
+}
+/* Geometry is interpolated by the browser between the actual source and target
+   rectangles. Do not replace the group's generated transform keyframes. */
+html.room-entry-transition::view-transition-group(room-portal) {
+  z-index: 1;
+  overflow: hidden;
+}
+html.room-entry-transition::view-transition-image-pair(room-portal) {
+  isolation: isolate;
+}
+html.room-entry-transition::view-transition-old(room-portal),
+html.room-entry-transition::view-transition-new(room-portal) {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  mix-blend-mode: normal;
+}
+/* Keep old artwork opaque below the incoming artwork, avoiding an empty frame. */
+html.room-entry-transition::view-transition-old(room-portal) {
+  animation: none;
+  opacity: 1;
+}
+html.room-entry-transition::view-transition-new(room-portal) {
+  animation: room-artwork-arrive 1050ms cubic-bezier(.45, 0, .2, 1) both;
+}
+html.room-entry-transition::view-transition-old(root) {
+  animation: room-house-recede 1050ms ease both;
+  mix-blend-mode: normal;
+}
+html.room-entry-transition::view-transition-new(root) {
+  animation: room-page-arrive 1050ms ease both;
+  mix-blend-mode: normal;
+}
+@keyframes room-artwork-arrive {
+  0%, 20% { opacity: 0; }
+  85%, 100% { opacity: 1; }
+}
+@keyframes room-house-recede {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes room-page-arrive {
+  0%, 15% { opacity: 0; }
+  85%, 100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .room-entry-source,
+  .room-entry-target { view-transition-name: none; }
+}

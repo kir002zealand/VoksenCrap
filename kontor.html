@@ -7,6 +7,8 @@
   <meta name="description" content="Udforsk kontoret i VOKSEN CRAP! og vend tilbage til dukkehuset for at gå på opdagelse i de andre rum.">
   <title>Kontoret – udforsk dit dukkehus | VOKSEN CRAP!</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/room-transition.css">
+  <script src="js/room-transition.js"></script>
   <script src="js/navigation.js" defer></script>
 </head>
 <body class="office-page">
@@ -20,8 +22,12 @@
         <h1 id="office-title">KONTORET</h1>
         <p>Plads til planer. Og lidt mere styr på papirerne.</p>
       </section>
-      <figure class="room-illustration">
+      <figure class="room-illustration office-illustration">
         <img src="assets/kontor-hoej.png" width="1244" height="1265" alt="Dukkehusets kontor med skrivebord, bærbar computer, stol, vægbilleder, vindue og plante.">
+        <!-- Laptop in the 1244 × 1265 image: x=237..652, y=634..868. -->
+        <span class="guide-backdrop guide-backdrop--laptop" aria-hidden="true"></span>
+        <a class="office-illustration__laptop guide-hotspot" href="filer.html" aria-label="Sådan får du orden i dine filer"></a>
+        <span class="guide-object guide-object--laptop" aria-hidden="true"></span>
       </figure>
       <section class="kitchen-prompt" aria-labelledby="office-prompt">
         <h2 id="office-prompt">HVAD SKAL VI HJÆLPE MED?</h2>
@@ -45,9 +51,9 @@
       <img src="assets/icon-heart.png" width="24" height="21" alt="" aria-hidden="true">
       <span>GEMT</span>
     </a>
-    <a class="bottom-nav__item bottom-nav__item--video" href="video.html">
+    <a class="bottom-nav__item bottom-nav__item--video" href="video.html" aria-label="Bag om Voksen Crap">
       <img src="assets/icon-video.png" width="24" height="23" alt="" aria-hidden="true">
-      <span>VIDEO</span>
+      <span>BAG OM</span>
     </a>
   </nav>
 </body>
