@@ -1,65 +1,64 @@
 'use strict';
 
-const favorites = window.VoksenFavorites;
-const personalSection = document.querySelector('#personal-saved');
-const personalList = document.querySelector('#personal-list');
-const savedStatus = document.querySelector('#saved-status');
-const savedNotice = document.querySelector('.notice');
+(() => {
+  const favorites = window.VoksenFavorites;
+  const list = document.querySelector('#personal-list');
+  const empty = document.querySelector('#saved-empty');
+  const status = document.querySelector('#saved-status');
+  const heading = document.querySelector('#personal-title');
+  if (!favorites || !list) return;
 
-function showUnavailable(title) {
-  const message = `${title}: Vejledningen er endnu ikke klar.`;
-  document.querySelector('#notice-description').textContent = message;
-  if (typeof savedNotice.showModal === 'function') savedNotice.showModal();
-  else savedStatus.textContent = message;
-}
+  function renderFavorites() {
+    const ids = favorites.list();
+    const focused = document.activeElement;
+    const previousItems = [...list.children];
+    const focusedItem = focused?.closest('[data-saved-id]');
+    const hadFocus = focusedItem && list.contains(focusedItem);
+    const focusedIndex = hadFocus ? previousItems.indexOf(focusedItem) : -1;
+    const focusedId = hadFocus ? focusedItem.dataset.savedId : null;
+    const wasButton = focused?.matches('button');
+    const fragment = document.createDocumentFragment();
 
-for (const button of document.querySelectorAll('button[data-example-id]')) {
-  button.addEventListener('click', () => showUnavailable(button.querySelector('.hack-card__title').textContent));
-}
-
-function renderFavorites() {
-  const ids = favorites.list();
-  const focusedCard = document.activeElement.closest('[data-saved-id]');
-  const focusedId = personalList.contains(focusedCard) ? focusedCard?.dataset.savedId : null;
-  personalList.replaceChildren();
-  personalSection.hidden = ids.length === 0;
-  for (const id of ids) {
-    const hack = favorites.catalog.find((item) => item.id === id);
-    const item = document.createElement('li');
-    const card = document.createElement(hack.href ? 'a' : 'button');
-    card.className = 'hack-card';
-    card.dataset.savedId = id;
-    if (hack.href) card.href = hack.href;
-    else {
-      card.type = 'button';
-      card.addEventListener('click', () => showUnavailable(hack.title));
+    for (const id of ids) {
+      const hack = favorites.catalog.find((item) => item.id === id);
+      const item = document.createElement('li');
+      item.className = 'saved-guide';
+      item.dataset.savedId = id;
+      const card = document.createElement('a');
+      card.className = 'hack-card';
+      card.href = hack.href;
+      for (const [name, text] of [['category', hack.category], ['title', hack.title], ['arrow', '']]) {
+        const span = document.createElement('span');
+        span.className = `hack-card__${name}`;
+        span.textContent = text;
+        if (name === 'arrow') span.setAttribute('aria-hidden', 'true');
+        card.append(span);
+      }
+      item.append(card, favorites.createButton(id));
+      fragment.append(item);
     }
-    for (const [className, text] of [['category', hack.category], ['title', hack.title], ['arrow', '']]) {
-      const span = document.createElement('span');
-      span.className = `hack-card__${className}`;
-      span.textContent = text;
-      if (className === 'arrow') span.setAttribute('aria-hidden', 'true');
-      card.append(span);
+    list.replaceChildren(fragment);
+    list.hidden = ids.length === 0;
+    empty.hidden = ids.length > 0;
+
+    // Keep keyboard focus on the same guide, or the next available remove button.
+    if (hadFocus) {
+      const items = [...list.children];
+      const replacement = items.find((item) => item.dataset.savedId === focusedId)
+        || items[Math.min(focusedIndex, items.length - 1)];
+      if (replacement) replacement.querySelector(wasButton ? 'button' : 'a').focus();
+      else heading.focus();
     }
-    item.append(card);
-    personalList.append(item);
+    status.textContent = ids.length
+      ? `${ids.length} ${ids.length === 1 ? 'gemt guide' : 'gemte guides'}.`
+      : 'Du har ikke gemt nogen guides endnu.';
+    status.classList.toggle('visually-hidden', favorites.persistent);
+    if (!favorites.persistent) {
+      status.textContent += ' Browseren tillader ikke lokal lagring. Ændringer kan ikke huskes, når du forlader siden.';
+    }
   }
-  if (focusedId) {
-    const replacement = [...personalList.querySelectorAll('[data-saved-id]')]
-      .find((card) => card.dataset.savedId === focusedId);
-    if (replacement) replacement.focus();
-    else {
-      const heading = document.querySelector('#examples-title');
-      heading.setAttribute('tabindex', '-1');
-      heading.focus();
-    }
-  }
-  savedStatus.textContent = ids.length
-    ? `${ids.length} personligt gemte hacks.`
-    : 'Du har ingen personligt gemte hacks. De fire kort er eksempler.';
-  if (!favorites.persistent) savedStatus.textContent += ' Lokal lagring er utilgængelig; ændringer kan kun huskes i denne session.';
-}
 
-window.addEventListener('favoriteschange', renderFavorites);
-window.addEventListener('pageshow', renderFavorites);
-renderFavorites();
+  window.addEventListener('favoriteschange', renderFavorites);
+  window.addEventListener('pageshow', renderFavorites);
+  renderFavorites();
+})();

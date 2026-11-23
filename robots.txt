@@ -8,3 +8,5 @@ Disallow:
 
 User-agent: GPTBot
 Disallow:
+
+Sitemap: https://xn--kiapzealnd-45a.dk/sitemap.xml

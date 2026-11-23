@@ -70,3 +70,13 @@ Opvaskemaskinen er PDF-side 2, (41, 408)–(85, 509). Det nye HTML-link er place
 
 ## Genoprettet vaskerum
 `vaskerum-original.png`: ny PDF side 1, (199, 462)–(365, 564), 6× opløsning. `vaskerum-hoej.png` (1254 × 1254) er en imagegen-redigering. Prompt: Fordel samme vaskemaskine, kurv, tøj, vindue og beholdere naturligt i et højere rum uden tekst, strækning eller nye genstande.
+
+
+## Lossless WebP – 20. november 2026
+`altan-hoej.webp`, `badevaerelse-uden-tekst.webp`, `kontor-hoej.webp`,
+`sovevaerelse-hoej.webp`, `stue-uden-tekst.webp`, `vaerksted-hoej.webp` og
+`vaskerum-hoej.webp` er lossless formatkonverteringer af de tilsvarende PNG-filer.
+Originale dimensioner og RGBA-pixels er bevaret og sammenlignet byte for byte.
+Både HTML-illustrationer og CSS-objektlag bruger samme WebP-adresse.
+PNG-kilderne må ikke slettes. Ingen AI-generering eller ændring af illustrationerne
+indgår i denne optimering. Samlet 8.928.942 → 5.455.118 bytes.

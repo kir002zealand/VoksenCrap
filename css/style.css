@@ -450,7 +450,8 @@ button { font: inherit; }
 .video-card .video-placeholder figcaption { bottom: 10%; }
 /* Replace the figure contents with a labelled video controls/playsinline element
    and real source/track files when supplied. Never add autoplay. */
-.video-card .video-placeholder > video {
+.video-card .video-placeholder > video,
+.about-page .video-card .video-placeholder > iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -459,14 +460,19 @@ button { font: inherit; }
   object-fit: contain;
 }
 
+.about-page .video-card .video-placeholder > iframe { border: 0; }
+
 /* Keep the hack video inside the existing responsive illustration slot. */
-.hack-page .video-placeholder > video {
+.hack-page .video-placeholder > video,
+.hack-page[data-guide-id="opvasker"] .video-placeholder > iframe {
   display: block;
   width: 100%;
   height: 100%;
   aspect-ratio: 348 / 220;
   object-fit: contain;
 }
+
+.hack-page[data-guide-id="opvasker"] .video-placeholder > iframe { border: 0; }
 
 .hack-page .video-placeholder { background: transparent; }
 
@@ -476,12 +482,17 @@ button { font: inherit; }
    Mobile retains the existing bottom bar. */
 .desktop-menu-toggle { display: none; }
 @media (min-width: 1024px) {
+  :root {
+    --page-width: 440px;
+    /* Place the 48px button 24px beside the centered content column. */
+    --desktop-menu-right: calc((100% - var(--page-width)) / 2 - 48px - 24px);
+  }
   .page { padding-bottom: 32px; }
   .desktop-menu-toggle {
     position: fixed;
     z-index: 21;
-    top: 24px;
-    right: 24px;
+    top: 15px;
+    right: var(--desktop-menu-right);
     display: grid;
     place-items: center;
     width: 48px;
@@ -510,7 +521,7 @@ button { font: inherit; }
   .desktop-menu-toggle[aria-expanded="true"] .desktop-menu-toggle__lines::before { top: 0; transform: rotate(45deg); }
   .desktop-menu-toggle[aria-expanded="true"] .desktop-menu-toggle__lines::after { top: 0; transform: rotate(-45deg); }
   .bottom-nav.bottom-nav--four {
-    inset: 84px 24px auto auto;
+    inset: 75px var(--desktop-menu-right) auto auto;
     display: flex;
     flex-direction: column;
     width: 224px;
@@ -939,7 +950,7 @@ html {
 .guide-backdrop--bed {
   left: 5.78778100%; top: 57.23320200%;
   width: 55.94855300%; height: 29.16996000%;
-  background-image: url('../assets/sovevaerelse-hoej.png');
+  background-image: url('../assets/sovevaerelse-hoej.webp');
   background-size: 178.73563236% 342.81843376%;
   background-position: 13.13868532% 80.80357148%;
   mask-image: url('../assets/object-masks/bed.svg');
@@ -949,7 +960,7 @@ html {
 .guide-backdrop--mirror {
   left: 63.70967700%; top: 25.84712400%;
   width: 20.72580600%; height: 21.67060700%;
-  background-image: url('../assets/badevaerelse-uden-tekst.png');
+  background-image: url('../assets/badevaerelse-uden-tekst.webp');
   background-size: 482.49028289% 461.45454071%;
   background-position: 80.36622485% 32.99798838%;
   mask-image: url('../assets/object-masks/mirror.svg');
@@ -959,7 +970,7 @@ html {
 .guide-backdrop--sofa {
   left: 9.35483900%; top: 63.88012600%;
   width: 51.77419400%; height: 24.29022100%;
-  background-image: url('../assets/stue-uden-tekst.png');
+  background-image: url('../assets/stue-uden-tekst.webp');
   background-size: 193.14641576% 411.68830864%;
   background-position: 19.39799409% 84.37499996%;
   mask-image: url('../assets/object-masks/sofa.svg');
@@ -969,7 +980,7 @@ html {
 .guide-backdrop--washer {
   left: 5.74162700%; top: 57.49601300%;
   width: 39.07496000%; height: 24.40191400%;
-  background-image: url('../assets/vaskerum-hoej.png');
+  background-image: url('../assets/vaskerum-hoej.webp');
   background-size: 255.91836818% 409.80391948%;
   background-position: 9.42408409% 76.05485276%;
   mask-image: url('../assets/object-masks/washer.svg');
@@ -979,7 +990,7 @@ html {
 .guide-backdrop--toolbox {
   left: 67.70334900%; top: 69.13875600%;
   width: 23.36523100%; height: 17.46411500%;
-  background-image: url('../assets/vaerksted-hoej.png');
+  background-image: url('../assets/vaerksted-hoej.webp');
   background-size: 427.98635288% 572.60273424%;
   background-position: 88.34547280% 83.76811614%;
   mask-image: url('../assets/object-masks/toolbox.svg');
@@ -989,7 +1000,7 @@ html {
 .guide-backdrop--laptop {
   left: 19.05144700%; top: 50.11857700%;
   width: 33.36012900%; height: 18.49802400%;
-  background-image: url('../assets/kontor-hoej.png');
+  background-image: url('../assets/kontor-hoej.webp');
   background-size: 299.75903271% 540.59828228%;
   background-position: 28.58866128% 61.49369556%;
   mask-image: url('../assets/object-masks/laptop.svg');
@@ -999,7 +1010,7 @@ html {
 .guide-backdrop--plant {
   left: 39.47368400%; top: 42.50398700%;
   width: 26.07655500%; height: 35.40669900%;
-  background-image: url('../assets/altan-hoej.png');
+  background-image: url('../assets/altan-hoej.webp');
   background-size: 383.48623888% 282.43242896%;
   background-position: 53.39805795% 65.80246921%;
   mask-image: url('../assets/object-masks/plant.svg');
@@ -1184,3 +1195,38 @@ figure:has(> .guide-hotspot:active) > .guide-backdrop {
   will-change: transform;
   pointer-events: none;
 }
+
+/* Shared favorite control: native button, fixed hit area, decorative heart. */
+.favorite-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+.favorite-button svg { display: block; overflow: visible; }
+.favorite-button path { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.favorite-button[aria-pressed="true"] { color: #c6283d; }
+.favorite-button[aria-pressed="true"] path { fill: currentColor; }
+.hack-intro { position: relative; }
+.hack-intro h1 > span:first-child { padding-right: 54px; }
+.hack-intro > .favorite-button { position: absolute; top: 0; right: 0; }
+.saved-guide { position: relative; }
+.saved-guide > .hack-card { padding-right: 92px; }
+.saved-guide .hack-card__arrow { right: 64px; }
+.saved-guide > .favorite-button { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); }
+.saved-empty {
+  margin: 16px 0 0;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--color-navigation);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.saved-status:not(.visually-hidden),
+.favorite-status:not(.visually-hidden) { margin: 20px; font-size: 14px; line-height: 1.6; }
