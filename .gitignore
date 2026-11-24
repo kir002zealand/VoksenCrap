@@ -1,2 +1,5 @@
 .DS_Store
 .idea/
+
+# Videoer indlejres fra YouTube; lokale MP4-filer holdes ude af Git.
+*.[mM][pP]4
