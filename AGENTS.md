@@ -280,3 +280,6 @@ Brugeren har nu bestilt og godkendt synlige hjerteknapper på alle otte how-to-g
 `gemte.html` viser kun personlige favoritter med eksisterende `.hack-card`-styles og en venlig tom tilstand. Hvert kort har et rigtigt link og en separat fjernknap uden indlejrede interaktive elementer. `js/saved.js` bevarer tastaturfokus ved fjernelse, opdaterer en live-region og bruger en ordnet genopbygning af listen. Ingen nye guides eller frameworks er tilføjet.
 
 Favoritter synkroniseres med `favoriteschange`, `storage` og `pageshow`, så andre faner og tilbage-navigation får opdateret tilstand. Ukendte ID’er fjernes fra læste data, dubletter fjernes, ugyldig JSON giver en tom samling. Det gamle `vask-toej-rigtigt`-ID svarer nu til `toejvask`; gamle ufærdige eksempelhacks vises ikke som gemte guider. Hvis localStorage er blokeret, virker hjerterne midlertidigt i sidens hukommelse med en synlig besked om manglende lagring på tværs af navigation. Favoritter er knyttet til samme browser og origin og synkroniseres ikke mellem enheder.
+
+### Fælles sidebaggrund – 25. november 2026
+Efter brugerens bestilling bruger alle sider nu `--color-background: #F6E9D7` fra roden samt samme theme-color. Sidespecifikke baggrundsoverrides er fjernet. Dette erstatter PDF-baggrundsvariationerne ovenfor. Kort, navigation og illustrationer beholder deres egne farver.

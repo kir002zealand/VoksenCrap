@@ -166,7 +166,6 @@ button { font: inherit; }
 
 /* Kitchen: original PDF page 2, mobile reference 390 × 844. */
 .kitchen-page {
-  --color-background: #fff6e9;
   --color-lime: #d4f264;
 }
 .kitchen-header { padding: 8px 22px 0; }
@@ -242,7 +241,6 @@ button { font: inherit; }
 
 /* Hack detail: PDF page 3, 390 × 1232 reference. */
 .hack-page {
-  --color-background: #fff6e9;
   --color-text: #242222;
   --color-primary: #3155dd;
   --color-accent: #f25386;
@@ -330,7 +328,6 @@ button { font: inherit; }
 
 /* Search, PDF page 4: original mobile reference 390 × 844. */
 .search-page {
-  --color-background: #fff6e9;
   --color-text: #242222;
   --color-primary: #3155dd;
 }
@@ -401,7 +398,6 @@ button { font: inherit; }
 
 /* Saved examples: reuse search cards with the PDF's pink category variant. */
 .saved-page {
-  --color-background: #fff6e9;
   --color-text: #242222;
   --color-primary: #3155dd;
   --color-accent: #f25386;
@@ -420,7 +416,6 @@ button { font: inherit; }
 
 /* Video page: shared placeholder component with two colour variants. */
 .video-page {
-  --color-background: #fff8f2;
   --color-text: #302b34;
   --color-primary: #3155dd;
   --color-play: #df7a63;
@@ -621,7 +616,6 @@ html {
 .workshop-page,
 .office-page,
 .laundry-page {
-  --color-background: #fff6e9;
   --color-lime: #d4f264;
 }
 .bathroom-page .kitchen-intro h1,
@@ -1120,7 +1114,7 @@ figure:has(> .guide-hotspot:active) > .guide-backdrop {
   line-height: 1.12;
   overflow-wrap: anywhere;
 }
-.about-page .video-intro h1 span { color: var(--color-accent-text); }
+.about-page .video-intro h1 span { color: var(--color-accent); }
 .about-page .video-intro > p:last-child {
   margin: 16px 0 0;
   color: var(--color-text);
